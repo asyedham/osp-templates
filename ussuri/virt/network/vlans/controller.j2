@@ -1,0 +1,69 @@
+---
+network_config:
+
+- type: ovs_bridge
+  name: br-ctlplane
+  use_dhcp: false
+  dns_servers: {{ ctlplane_dns_nameservers }}
+  domain: {{ dns_search_domains }}
+  members:
+  - type: interface
+    name: eno2
+    primary: true
+  addresses:
+  - ip_netmask: {{ ctlplane_ip }}/{{ ctlplane_subnet_cidr }}
+  routes:
+  - ip_netmask: 0.0.0.0/0
+    next_hop: {{ ctlplane_gateway_ip }}
+    default: true
+
+- type: ovs_bridge
+  name: br-isolated
+  use_dhcp: false
+  members:
+  - type: interface
+    name: eno1
+    primary: true
+  - type: vlan
+    vlan_id: 301
+
+    addresses:
+    - ip_netmask: {{ internal_api_ip }}/{{ internal_api_cidr }}
+  - type: vlan
+    vlan_id: 302
+
+    addresses:
+    - ip_netmask: {{ storage_ip }}/{{ storage_cidr }}
+  - type: vlan
+    vlan_id: 303
+
+    addresses:
+    - ip_netmask: {{ storage_mgmt_ip }}/{{ storage_mgmt_cidr }}
+
+- type: ovs_bridge
+  name: br-tenant
+  use_dhcp: false
+  members:
+  - type: interface
+    name: eno3
+    primary: true
+  - type: vlan
+    vlan_id: 304
+
+    addresses:
+    - ip_netmask: {{ tenant_ip }}/{{ tenant_cidr }}
+
+- type: ovs_bridge
+  name: br-ex
+  use_dhcp: false
+  dns_servers: {{ ctlplane_dns_nameservers }}
+  domain: {{ dns_search_domains }}
+  members:
+  - type: interface
+    name: eno4
+    primary: true
+  - type: vlan
+    vlan_id: 300
+    addresses:
+    - ip_netmask: {{ external_ip }}/{{ external_cidr }}
+

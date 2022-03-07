@@ -1,0 +1,17 @@
+parameter_defaults:
+    CephStorageNetworkConfigTemplate: /home/stack/virt/network/vlans/ceph-storage.j2
+    ComputeNetworkConfigTemplate: /home/stack/virt/network/vlans/compute.j2
+    ComputeParameters:
+        NeutronBridgeMappings: ''
+    ControllerNetworkConfigTemplate: /home/stack/virt/network/vlans/controller.j2
+    ControllerParameters:
+        NeutronBridgeMappings: datacentre:br-ex,tenant:br-isolated
+    NeutronEnableDVR: 'false'
+    NeutronExternalNetworkBridge: ''
+    NeutronNetworkType: geneve,vlan
+    NeutronNetworkVLANRanges: tenant:1000:2000
+    NeutronTunnelTypes: geneve
+resource_registry:
+    OS::TripleO::CephStorage::Net::SoftwareConfig: OS::Heat::None
+    OS::TripleO::Compute::Net::SoftwareConfig: OS::Heat::None
+    OS::TripleO::Controller::Net::SoftwareConfig: OS::Heat::None

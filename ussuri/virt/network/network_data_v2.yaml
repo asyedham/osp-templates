@@ -1,0 +1,60 @@
+- name: Storage
+  name_lower: storage
+  subnets:
+    storage_subnet:
+      allocation_pools:
+      - end: 172.17.3.149
+        start: 172.17.3.10
+      ip_subnet: 172.17.3.0/24
+      physical_network: storage
+      vlan: 302
+  vip: true
+
+- name: StorageMgmt
+  name_lower: storage_mgmt
+  subnets:
+    storage_mgmt_subnet:
+      allocation_pools:
+      - end: 172.17.4.149
+        start: 172.17.4.10
+      ip_subnet: 172.17.4.0/24
+      physical_network: storage_mgmt
+      vlan: 303
+  vip: true
+
+- name: InternalApi
+  name_lower: internal_api
+  subnets:
+    internal_api_subnet:
+      allocation_pools:
+      - end: 172.17.1.149
+        start: 172.17.1.10
+      ip_subnet: 172.17.1.0/24
+      physical_network: internal_api
+      vlan: 301
+  vip: true
+
+- name: Tenant
+  name_lower: tenant
+  vip: false
+  subnets:
+    tenant_subnet:
+      allocation_pools:
+      - end: 172.17.2.149
+        start: 172.17.2.10
+      ip_subnet: 172.17.2.0/24
+      physical_network: tenant
+      vlan: 304
+
+- name: External
+  name_lower: external
+  vip: true
+  subnets:
+    external_subnet:
+      allocation_pools:
+      - end: 172.18.0.150
+        start: 172.18.0.50
+      gateway_ip: 172.18.0.1
+      ip_subnet: 172.18.0.0/16
+      physical_network: external
+      vlan: 300

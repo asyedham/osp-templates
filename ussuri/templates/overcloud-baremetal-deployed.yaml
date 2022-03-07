@@ -1,0 +1,349 @@
+parameter_defaults:
+  CephStorageCount: 3
+  CephStorageHostnameFormat: ceph-%index%
+  ComputeCount: 9
+  ComputeHostnameFormat: compute-%index%
+  ControllerCount: 3
+  ControllerHostnameFormat: controller-%index%
+  DeployedServerPortMap:
+    ceph-0-ctlplane:
+      fixed_ips:
+      - ip_address: 192.168.24.71
+    ceph-1-ctlplane:
+      fixed_ips:
+      - ip_address: 192.168.24.89
+    ceph-2-ctlplane:
+      fixed_ips:
+      - ip_address: 192.168.24.52
+    compute-0-ctlplane:
+      fixed_ips:
+      - ip_address: 192.168.24.104
+    compute-1-ctlplane:
+      fixed_ips:
+      - ip_address: 192.168.24.20
+    compute-2-ctlplane:
+      fixed_ips:
+      - ip_address: 192.168.24.98
+    compute-3-ctlplane:
+      fixed_ips:
+      - ip_address: 192.168.24.17
+    compute-4-ctlplane:
+      fixed_ips:
+      - ip_address: 192.168.24.40
+    compute-5-ctlplane:
+      fixed_ips:
+      - ip_address: 192.168.24.16
+    compute-6-ctlplane:
+      fixed_ips:
+      - ip_address: 192.168.24.41
+    compute-7-ctlplane:
+      fixed_ips:
+      - ip_address: 192.168.24.11
+    compute-8-ctlplane:
+      fixed_ips:
+      - ip_address: 192.168.24.42
+    controller-0-ctlplane:
+      fixed_ips:
+      - ip_address: 192.168.24.85
+    controller-1-ctlplane:
+      fixed_ips:
+      - ip_address: 192.168.24.86
+    controller-2-ctlplane:
+      fixed_ips:
+      - ip_address: 192.168.24.24
+  HostnameMap:
+    ceph-0: ceph-0
+    ceph-1: ceph-1
+    ceph-2: ceph-2
+    compute-0: compute-0
+    compute-1: compute-1
+    compute-2: compute-2
+    compute-3: compute-3
+    compute-4: compute-4
+    compute-5: compute-5
+    compute-6: compute-6
+    compute-7: compute-7
+    compute-8: compute-8
+    controller-0: controller-0
+    controller-1: controller-1
+    controller-2: controller-2
+  NodePortMap:
+    ceph-0:
+      ctlplane:
+        ip_address: 192.168.24.71
+        ip_address_uri: 192.168.24.71
+        ip_subnet: 192.168.24.71/24
+      storage:
+        ip_address: 172.17.3.79
+        ip_address_uri: 172.17.3.79
+        ip_subnet: 172.17.3.79/24
+      storage_mgmt:
+        ip_address: 172.17.4.36
+        ip_address_uri: 172.17.4.36
+        ip_subnet: 172.17.4.36/24
+    ceph-1:
+      ctlplane:
+        ip_address: 192.168.24.89
+        ip_address_uri: 192.168.24.89
+        ip_subnet: 192.168.24.89/24
+      storage:
+        ip_address: 172.17.3.10
+        ip_address_uri: 172.17.3.10
+        ip_subnet: 172.17.3.10/24
+      storage_mgmt:
+        ip_address: 172.17.4.100
+        ip_address_uri: 172.17.4.100
+        ip_subnet: 172.17.4.100/24
+    ceph-2:
+      ctlplane:
+        ip_address: 192.168.24.52
+        ip_address_uri: 192.168.24.52
+        ip_subnet: 192.168.24.52/24
+      storage:
+        ip_address: 172.17.3.122
+        ip_address_uri: 172.17.3.122
+        ip_subnet: 172.17.3.122/24
+      storage_mgmt:
+        ip_address: 172.17.4.116
+        ip_address_uri: 172.17.4.116
+        ip_subnet: 172.17.4.116/24
+    compute-0:
+      ctlplane:
+        ip_address: 192.168.24.104
+        ip_address_uri: 192.168.24.104
+        ip_subnet: 192.168.24.104/24
+      internal_api:
+        ip_address: 172.17.1.49
+        ip_address_uri: 172.17.1.49
+        ip_subnet: 172.17.1.49/24
+      storage:
+        ip_address: 172.17.3.46
+        ip_address_uri: 172.17.3.46
+        ip_subnet: 172.17.3.46/24
+      tenant:
+        ip_address: 172.17.2.93
+        ip_address_uri: 172.17.2.93
+        ip_subnet: 172.17.2.93/24
+    compute-1:
+      ctlplane:
+        ip_address: 192.168.24.20
+        ip_address_uri: 192.168.24.20
+        ip_subnet: 192.168.24.20/24
+      internal_api:
+        ip_address: 172.17.1.95
+        ip_address_uri: 172.17.1.95
+        ip_subnet: 172.17.1.95/24
+      storage:
+        ip_address: 172.17.3.83
+        ip_address_uri: 172.17.3.83
+        ip_subnet: 172.17.3.83/24
+      tenant:
+        ip_address: 172.17.2.48
+        ip_address_uri: 172.17.2.48
+        ip_subnet: 172.17.2.48/24
+    compute-2:
+      ctlplane:
+        ip_address: 192.168.24.98
+        ip_address_uri: 192.168.24.98
+        ip_subnet: 192.168.24.98/24
+      internal_api:
+        ip_address: 172.17.1.101
+        ip_address_uri: 172.17.1.101
+        ip_subnet: 172.17.1.101/24
+      storage:
+        ip_address: 172.17.3.130
+        ip_address_uri: 172.17.3.130
+        ip_subnet: 172.17.3.130/24
+      tenant:
+        ip_address: 172.17.2.51
+        ip_address_uri: 172.17.2.51
+        ip_subnet: 172.17.2.51/24
+    compute-3:
+      ctlplane:
+        ip_address: 192.168.24.17
+        ip_address_uri: 192.168.24.17
+        ip_subnet: 192.168.24.17/24
+      internal_api:
+        ip_address: 172.17.1.47
+        ip_address_uri: 172.17.1.47
+        ip_subnet: 172.17.1.47/24
+      storage:
+        ip_address: 172.17.3.95
+        ip_address_uri: 172.17.3.95
+        ip_subnet: 172.17.3.95/24
+      tenant:
+        ip_address: 172.17.2.141
+        ip_address_uri: 172.17.2.141
+        ip_subnet: 172.17.2.141/24
+    compute-4:
+      ctlplane:
+        ip_address: 192.168.24.40
+        ip_address_uri: 192.168.24.40
+        ip_subnet: 192.168.24.40/24
+      internal_api:
+        ip_address: 172.17.1.77
+        ip_address_uri: 172.17.1.77
+        ip_subnet: 172.17.1.77/24
+      storage:
+        ip_address: 172.17.3.97
+        ip_address_uri: 172.17.3.97
+        ip_subnet: 172.17.3.97/24
+      tenant:
+        ip_address: 172.17.2.122
+        ip_address_uri: 172.17.2.122
+        ip_subnet: 172.17.2.122/24
+    compute-5:
+      ctlplane:
+        ip_address: 192.168.24.16
+        ip_address_uri: 192.168.24.16
+        ip_subnet: 192.168.24.16/24
+      internal_api:
+        ip_address: 172.17.1.107
+        ip_address_uri: 172.17.1.107
+        ip_subnet: 172.17.1.107/24
+      storage:
+        ip_address: 172.17.3.135
+        ip_address_uri: 172.17.3.135
+        ip_subnet: 172.17.3.135/24
+      tenant:
+        ip_address: 172.17.2.20
+        ip_address_uri: 172.17.2.20
+        ip_subnet: 172.17.2.20/24
+    compute-6:
+      ctlplane:
+        ip_address: 192.168.24.41
+        ip_address_uri: 192.168.24.41
+        ip_subnet: 192.168.24.41/24
+      internal_api:
+        ip_address: 172.17.1.112
+        ip_address_uri: 172.17.1.112
+        ip_subnet: 172.17.1.112/24
+      storage:
+        ip_address: 172.17.3.72
+        ip_address_uri: 172.17.3.72
+        ip_subnet: 172.17.3.72/24
+      tenant:
+        ip_address: 172.17.2.145
+        ip_address_uri: 172.17.2.145
+        ip_subnet: 172.17.2.145/24
+    compute-7:
+      ctlplane:
+        ip_address: 192.168.24.11
+        ip_address_uri: 192.168.24.11
+        ip_subnet: 192.168.24.11/24
+      internal_api:
+        ip_address: 172.17.1.80
+        ip_address_uri: 172.17.1.80
+        ip_subnet: 172.17.1.80/24
+      storage:
+        ip_address: 172.17.3.48
+        ip_address_uri: 172.17.3.48
+        ip_subnet: 172.17.3.48/24
+      tenant:
+        ip_address: 172.17.2.91
+        ip_address_uri: 172.17.2.91
+        ip_subnet: 172.17.2.91/24
+    compute-8:
+      ctlplane:
+        ip_address: 192.168.24.42
+        ip_address_uri: 192.168.24.42
+        ip_subnet: 192.168.24.42/24
+      internal_api:
+        ip_address: 172.17.1.75
+        ip_address_uri: 172.17.1.75
+        ip_subnet: 172.17.1.75/24
+      storage:
+        ip_address: 172.17.3.44
+        ip_address_uri: 172.17.3.44
+        ip_subnet: 172.17.3.44/24
+      tenant:
+        ip_address: 172.17.2.109
+        ip_address_uri: 172.17.2.109
+        ip_subnet: 172.17.2.109/24
+    controller-0:
+      ctlplane:
+        ip_address: 192.168.24.85
+        ip_address_uri: 192.168.24.85
+        ip_subnet: 192.168.24.85/24
+      external:
+        ip_address: 172.18.0.113
+        ip_address_uri: 172.18.0.113
+        ip_subnet: 172.18.0.113/16
+      internal_api:
+        ip_address: 172.17.1.140
+        ip_address_uri: 172.17.1.140
+        ip_subnet: 172.17.1.140/24
+      storage:
+        ip_address: 172.17.3.98
+        ip_address_uri: 172.17.3.98
+        ip_subnet: 172.17.3.98/24
+      storage_mgmt:
+        ip_address: 172.17.4.19
+        ip_address_uri: 172.17.4.19
+        ip_subnet: 172.17.4.19/24
+      tenant:
+        ip_address: 172.17.2.42
+        ip_address_uri: 172.17.2.42
+        ip_subnet: 172.17.2.42/24
+    controller-1:
+      ctlplane:
+        ip_address: 192.168.24.86
+        ip_address_uri: 192.168.24.86
+        ip_subnet: 192.168.24.86/24
+      external:
+        ip_address: 172.18.0.85
+        ip_address_uri: 172.18.0.85
+        ip_subnet: 172.18.0.85/16
+      internal_api:
+        ip_address: 172.17.1.132
+        ip_address_uri: 172.17.1.132
+        ip_subnet: 172.17.1.132/24
+      storage:
+        ip_address: 172.17.3.118
+        ip_address_uri: 172.17.3.118
+        ip_subnet: 172.17.3.118/24
+      storage_mgmt:
+        ip_address: 172.17.4.97
+        ip_address_uri: 172.17.4.97
+        ip_subnet: 172.17.4.97/24
+      tenant:
+        ip_address: 172.17.2.111
+        ip_address_uri: 172.17.2.111
+        ip_subnet: 172.17.2.111/24
+    controller-2:
+      ctlplane:
+        ip_address: 192.168.24.24
+        ip_address_uri: 192.168.24.24
+        ip_subnet: 192.168.24.24/24
+      external:
+        ip_address: 172.18.0.50
+        ip_address_uri: 172.18.0.50
+        ip_subnet: 172.18.0.50/16
+      internal_api:
+        ip_address: 172.17.1.55
+        ip_address_uri: 172.17.1.55
+        ip_subnet: 172.17.1.55/24
+      storage:
+        ip_address: 172.17.3.106
+        ip_address_uri: 172.17.3.106
+        ip_subnet: 172.17.3.106/24
+      storage_mgmt:
+        ip_address: 172.17.4.59
+        ip_address_uri: 172.17.4.59
+        ip_subnet: 172.17.4.59/24
+      tenant:
+        ip_address: 172.17.2.13
+        ip_address_uri: 172.17.2.13
+        ip_subnet: 172.17.2.13/24
+resource_registry:
+  OS::TripleO::CephStorage::Ports::StorageMgmtPort: /usr/share/openstack-tripleo-heat-templates/network/ports/deployed_storage_mgmt.yaml
+  OS::TripleO::CephStorage::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/deployed_storage.yaml
+  OS::TripleO::Compute::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/deployed_internal_api.yaml
+  OS::TripleO::Compute::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/deployed_storage.yaml
+  OS::TripleO::Compute::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/deployed_tenant.yaml
+  OS::TripleO::Controller::Ports::ExternalPort: /usr/share/openstack-tripleo-heat-templates/network/ports/deployed_external.yaml
+  OS::TripleO::Controller::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/deployed_internal_api.yaml
+  OS::TripleO::Controller::Ports::StorageMgmtPort: /usr/share/openstack-tripleo-heat-templates/network/ports/deployed_storage_mgmt.yaml
+  OS::TripleO::Controller::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/deployed_storage.yaml
+  OS::TripleO::Controller::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/deployed_tenant.yaml
+  OS::TripleO::DeployedServer::ControlPlanePort: /usr/share/openstack-tripleo-heat-templates/deployed-server/deployed-neutron-port.yaml

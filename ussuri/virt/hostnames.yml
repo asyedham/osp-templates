@@ -1,0 +1,13 @@
+
+resource_registry:
+  OS::TripleO::Services::NovaLibvirt: /usr/share/openstack-tripleo-heat-templates/deployment/deprecated/nova/nova-libvirt-container-puppet.yaml
+
+
+parameter_defaults:
+    CloudDomain: redhat.local
+
+    CephStorageHostnameFormat: 'ceph-%index%'
+    ObjectStorageHostnameFormat: 'swift-%index%'
+    ComputeHostnameFormat: 'compute-%index%'
+    ControllerHostnameFormat: 'controller-%index%'
+

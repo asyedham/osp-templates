@@ -1,0 +1,7 @@
+---
+parameter_defaults:
+  CephClusterFSID: dedd5062-014e-56c0-af8f-eb0e9b6f4975
+  CephDynamicSpec: false
+  DeployedCeph: true
+  # Recommendation: set the following to false after overcloud is deployed
+  ApplyCephConfigOverridesOnUpdate: true
